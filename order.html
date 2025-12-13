@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Place Order – High Choice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
+
+<style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+.header{
+  max-width:700px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+.header img{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:16px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  margin-bottom:16px;
+}
+
+/* TITLE */
+h1{
+  font-size:26px;
+  margin:0 0 10px;
+}
+small{color:var(--muted)}
+
+/* PRODUCT SUMMARY */
+.summary div{
+  display:flex;
+  justify-content:space-between;
+  margin:6px 0;
+}
+
+/* FORM */
+label{
+  font-size:14px;
+  font-weight:600;
+}
+input, textarea, select{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+
+/* PAYMENT */
+.payment{
+  display:flex;
+  gap:10px;
+}
+.payment label{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  padding:12px;
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+}
+.payment input{display:none}
+.payment input:checked + label{
+  border-color:var(--accent);
+  background:#eef2ff;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* FOOTER NOTE */
+.note{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+    <img src="logo.png">
+    HIGH CHOICE – Checkout
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- PRODUCT SUMMARY -->
+  <div class="card">
+    <h1>Order Summary</h1>
+    <div class="summary">
+      <div><span>Brand</span><strong id="brand">–</strong></div>
+      <div><span>Model</span><strong id="model">–</strong></div>
+      <div><span>Price</span><strong>₹ <span id="price">0</span></strong></div>
+    </div>
+  </div>
+
+  <!-- ADDRESS -->
+  <div class="card">
+    <h2>Delivery Address</h2>
+
+    <label>Full Name</label>
+    <input id="name" placeholder="Enter your name">
+
+    <label>Phone Number</label>
+    <input id="phone" placeholder="10 digit mobile number">
+
+    <label>Full Address</label>
+    <textarea id="address" rows="3" placeholder="House no, street, area"></textarea>
+
+    <label>City</label>
+    <input id="city" placeholder="City">
+
+    <label>Pincode</label>
+    <input id="pincode" placeholder="Pincode">
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="card">
+    <h2>Payment Method</h2>
+    <div class="payment">
+      <input type="radio" name="pay" id="cod" value="Cash on Delivery" checked>
+      <label for="cod">COD</label>
+
+      <input type="radio" name="pay" id="prepaid" value="Prepaid">
+      <label for="prepaid">Prepaid</label>
+    </div>
+  </div>
+
+  <!-- PLACE ORDER -->
+  <button onclick="placeOrder()">Place Order via WhatsApp</button>
+
+  <div class="note">
+    You will be redirected to WhatsApp to confirm your order
+  </div>
+
+</div>
+
+<script>
+/* READ PRODUCT FROM URL */
+const params = new URLSearchParams(window.location.search);
+const brand = params.get("brand") || "";
+const model = params.get("model") || "";
+const price = params.get("price") || "";
+
+document.getElementById("brand").innerText = brand;
+document.getElementById("model").innerText = model;
+document.getElementById("price").innerText = price;
+
+/* PLACE ORDER */
+function placeOrder(){
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const city = document.getElementById("city").value;
+  const pin = document.getElementById("pincode").value;
+  const pay = document.querySelector("input[name='pay']:checked").value;
+
+  if(!name || !phone || !address || !city || !pin){
+    alert("Please fill all details");
+    return;
+  }
+
+  const msg =
+`🕰️ *HIGH CHOICE – NEW ORDER*
+
+Brand: ${brand}
+Model: ${model}
+Price: ₹${price}
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🏠 Address: ${address}, ${city} – ${pin}
+
+💳 Payment: ${pay}`;
+
+  const whatsappNumber = "917869288078"; // CHANGE IF NEEDED
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(msg);
+
+  window.open(url, "_blank");
+  setTimeout(()=>{ window.location.href="success.html"; }, 1200);
+}
+</script>
+
+</body>
+</html>
