@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maserati Collection | High Choice</title>
+<link rel="icon" href="favicon.png">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Roboto}
+body{background:#f4f5f7;color:#111}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08)
+}
+header img{height:40px;border-radius:10px}
+header h1{font-size:18px;font-weight:800}
+
+/* PAGE */
+.container{max-width:520px;margin:auto;padding:14px}
+
+/* CARD */
+.card{
+  background:#fff;border-radius:18px;padding:14px;
+  margin-bottom:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)
+}
+
+/* SLIDER */
+.slider{overflow:hidden;border-radius:16px;background:#eee}
+.slides{display:flex;animation:slide 12s infinite}
+.slides img{
+  width:100%;height:260px;object-fit:contain;
+  background:#f1f1f1;flex-shrink:0
+}
+@keyframes slide{
+  0%,20%{transform:translateX(0)}
+  25%,45%{transform:translateX(-100%)}
+  50%,70%{transform:translateX(-200%)}
+  75%,100%{transform:translateX(-300%)}
+}
+
+/* INFO */
+.card h2{font-size:16px;margin:12px 0 4px;font-weight:700}
+.price{font-size:18px;font-weight:800;margin-bottom:10px}
+
+/* BUY BUTTON */
+.buy{margin-top:12px}
+.buy a{
+  display:block;width:100%;padding:16px 0;text-align:center;
+  background:#2563eb;color:#fff !important;
+  font-size:16px;font-weight:800;border-radius:14px;
+  text-decoration:none
+}
+.buy a:active{transform:scale(.97)}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png">
+  <h1>MASERATI COLLECTION</h1>
+</header>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="maserati-skeleton-1.jpg"><img src="maserati-skeleton-2.jpg">
+    <img src="maserati-skeleton-3.jpg"><img src="maserati-skeleton-4.jpg">
+  </div></div>
+  <h2>Maserati Automatic Skeleton</h2>
+  <div class="price">₹2199</div>
+  <div class="buy">
+    <a href="order.html?brand=Maserati&model=Automatic Skeleton&price=2199">Buy Now</a>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="maserati-attraziane-1.jpg"><img src="maserati-attraziane-2.jpg">
+    <img src="maserati-attraziane-3.jpg"><img src="maserati-attraziane-4.jpg">
+  </div></div>
+  <h2>Maserati Attraziane</h2>
+  <div class="price">₹1999</div>
+  <div class="buy">
+    <a href="order.html?brand=Maserati&model=Attraziane&price=1999">Buy Now</a>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="maserati-classic-1.jpg"><img src="maserati-classic-2.jpg">
+    <img src="maserati-classic-3.jpg"><img src="maserati-classic-4.jpg">
+  </div></div>
+  <h2>Maserati Classic Automatic</h2>
+  <div class="price">₹2499</div>
+  <div class="buy">
+    <a href="order.html?brand=Maserati&model=Classic Automatic&price=2499">Buy Now</a>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="maserati-potenza-1.jpg"><img src="maserati-potenza-2.jpg">
+    <img src="maserati-potenza-3.jpg"><img src="maserati-potenza-4.jpg">
+  </div></div>
+  <h2>Maserati Potenza Automatic</h2>
+  <div class="price">₹2299</div>
+  <div class="buy">
+    <a href="order.html?brand=Maserati&model=Potenza Automatic&price=2299">Buy Now</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
