@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rolex Watches – High Choice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
+
+<style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e5e7eb;
+  --card:#f8fafc;
+  --accent:#2563eb;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+.header{
+  max-width:900px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+.header img{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
+}
+
+/* HERO */
+.hero img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:16px;
+}
+.hero h1{margin:6px 0}
+.hero p{margin:0;color:var(--muted)}
+
+/* MODEL CARD */
+.model{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px;
+  margin-top:18px;
+}
+.model h2{
+  margin:6px 0 2px;
+  font-size:20px;
+}
+.price{
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+/* IMAGE SLIDER */
+.slider{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+.slider img{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  scroll-snap-align:start;
+  flex-shrink:0;
+}
+
+/* BUY BUTTON */
+.buy{
+  margin-top:10px;
+}
+.buy a{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+    <img src="logo.png">
+    ROLEX COLLECTION
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="rolex-banner.jpg">
+    <h1>Rolex Watches</h1>
+    <p>Luxury craftsmanship & iconic design</p>
+  </div>
+
+  <!-- MODELS START -->
+
+  <div class="model">
+    <h2>Rolex Yachtmaster Automatic</h2>
+    <div class="price">₹2499</div>
+    <div class="slider">
+      <img src="yachtmaster-1.jpg"><img src="yachtmaster-2.jpg">
+      <img src="yachtmaster-3.jpg"><img src="yachtmaster-4.jpg">
+    </div>
+    <div class="buy">
+      <a href="order.html?brand=Rolex&model=Yachtmaster Automatic&price=2499">Buy Now</a>
+    </div>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Daydate Shift Movement</h2>
+    <div class="price">₹1699</div>
+    <div class="slider">
+      <img src="daydate-1.jpg"><img src="daydate-2.jpg">
+      <img src="daydate-3.jpg"><img src="daydate-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Daydate Shift Movement&price=1699">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Submariner Shift Movement</h2>
+    <div class="price">₹1599</div>
+    <div class="slider">
+      <img src="submariner-1.jpg"><img src="submariner-2.jpg">
+      <img src="submariner-3.jpg"><img src="submariner-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Submariner Shift Movement&price=1599">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Daytona</h2>
+    <div class="price">₹2199</div>
+    <div class="slider">
+      <img src="daytona-1.jpg"><img src="daytona-2.jpg">
+      <img src="daytona-3.jpg"><img src="daytona-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Daytona&price=2199">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Sun Moon Edition</h2>
+    <div class="price">₹1699</div>
+    <div class="slider">
+      <img src="sunmoon-1.jpg"><img src="sunmoon-2.jpg">
+      <img src="sunmoon-3.jpg"><img src="sunmoon-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Sun Moon Edition&price=1699">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Datejust Automatic</h2>
+    <div class="price">₹3499</div>
+    <div class="slider">
+      <img src="datejust-1.jpg"><img src="datejust-2.jpg">
+      <img src="datejust-3.jpg"><img src="datejust-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Datejust Automatic&price=3499">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Explorer II</h2>
+    <div class="price">₹3999</div>
+    <div class="slider">
+      <img src="explorer2-1.jpg"><img src="explorer2-2.jpg">
+      <img src="explorer2-3.jpg"><img src="explorer2-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Explorer II&price=3999">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex King Automatic</h2>
+    <div class="price">₹1899</div>
+    <div class="slider">
+      <img src="king-1.jpg"><img src="king-2.jpg">
+      <img src="king-3.jpg"><img src="king-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=King Automatic&price=1899">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex GMT Shift Movement</h2>
+    <div class="price">₹1699</div>
+    <div class="slider">
+      <img src="gmt-1.jpg"><img src="gmt-2.jpg">
+      <img src="gmt-3.jpg"><img src="gmt-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=GMT Shift Movement&price=1699">Buy Now</a>
+  </div>
+
+  <div class="model">
+    <h2>Rolex Sky Dweller Shift Movement</h2>
+    <div class="price">₹1499</div>
+    <div class="slider">
+      <img src="skydweller-1.jpg"><img src="skydweller-2.jpg">
+      <img src="skydweller-3.jpg"><img src="skydweller-4.jpg">
+    </div>
+    <a class="buy" href="order.html?brand=Rolex&model=Sky Dweller Shift Movement&price=1499">Buy Now</a>
+  </div>
+
+</div>
+
+</body>
+</html>
