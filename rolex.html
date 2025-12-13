@@ -8,93 +8,51 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Roboto}
-body{background:#f4f5f7}
+body{background:#f4f5f7;color:#111}
 
 /* HEADER */
 header{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:100;
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:#fff;
   box-shadow:0 2px 10px rgba(0,0,0,.08)
 }
-header img{height:42px;border-radius:10px}
+header img{height:40px;border-radius:10px}
 header h1{font-size:18px;font-weight:800}
 
 /* PAGE */
-.container{
-  max-width:520px;
-  margin:auto;
-  padding:14px
-}
+.container{max-width:520px;margin:auto;padding:14px}
 
 /* CARD */
 .card{
-  background:#fff;
-  border-radius:18px;
-  padding:14px;
-  margin-bottom:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08)
+  background:#fff;border-radius:18px;padding:14px;
+  margin-bottom:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)
 }
 
 /* SLIDER */
-.slider{
-  position:relative;
-  overflow:hidden;
-  border-radius:16px;
-  background:#eee
-}
-.slides{
-  display:flex;
-  width:100%;
-  animation:slide 12s infinite
-}
+.slider{overflow:hidden;border-radius:16px;background:#eee}
+.slides{display:flex;animation:slide 12s infinite}
 .slides img{
-  width:100%;
-  height:260px;
-  object-fit:contain;
-  flex-shrink:0;
-  background:#f1f1f1
+  width:100%;height:260px;object-fit:contain;
+  background:#f1f1f1;flex-shrink:0
 }
-
 @keyframes slide{
-  0%{transform:translateX(0)}
-  20%{transform:translateX(0)}
-  25%{transform:translateX(-100%)}
-  45%{transform:translateX(-100%)}
-  50%{transform:translateX(-200%)}
-  70%{transform:translateX(-200%)}
-  75%{transform:translateX(-300%)}
-  100%{transform:translateX(-300%)}
+  0%,20%{transform:translateX(0)}
+  25%,45%{transform:translateX(-100%)}
+  50%,70%{transform:translateX(-200%)}
+  75%,100%{transform:translateX(-300%)}
 }
 
 /* INFO */
-.card h2{
-  font-size:16px;
-  margin:12px 0 4px;
-  font-weight:700
-}
-.price{
-  font-size:18px;
-  font-weight:800;
-  margin-bottom:10px
-}
+.card h2{font-size:16px;margin:12px 0 4px;font-weight:700}
+.price{font-size:18px;font-weight:800;margin-bottom:10px}
 
-/* BUY BUTTON */
+/* BUY BUTTON (FIXED) */
+.buy{margin-top:12px}
 .buy a{
-  display:block;
-  width:100%;
-  padding:15px;
-  text-align:center;
-  background:#2563eb;
-  color:#fff;
-  font-size:16px;
-  font-weight:800;
-  border-radius:14px;
+  display:block;width:100%;padding:16px 0;text-align:center;
+  background:#2563eb;color:#fff !important;
+  font-size:16px;font-weight:800;border-radius:14px;
   text-decoration:none
 }
 .buy a:active{transform:scale(.97)}
@@ -110,55 +68,114 @@ header h1{font-size:18px;font-weight:800}
 
 <div class="container">
 
-<!-- ROLEX YACHTMASTER -->
+<!-- 1 -->
 <div class="card">
-  <div class="slider">
-    <div class="slides">
-      <img src="rolex-yachtmaster-1.jpg">
-      <img src="rolex-yachtmaster-2.jpg">
-      <img src="rolex-yachtmaster-3.jpg">
-      <img src="rolex-yachtmaster-4.jpg">
-    </div>
-  </div>
+  <div class="slider"><div class="slides">
+    <img src="rolex-yachtmaster-1.jpg"><img src="rolex-yachtmaster-2.jpg">
+    <img src="rolex-yachtmaster-3.jpg"><img src="rolex-yachtmaster-4.jpg">
+  </div></div>
   <h2>Rolex Yachtmaster Automatic</h2>
   <div class="price">₹2499</div>
-  <div class="buy">
-    <a href="order.html?brand=Rolex&model=Yachtmaster Automatic&price=2499">Buy Now</a>
-  </div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Yachtmaster Automatic&price=2499">Buy Now</a></div>
 </div>
 
-<!-- ROLEX DAYDATE -->
+<!-- 2 -->
 <div class="card">
-  <div class="slider">
-    <div class="slides">
-      <img src="rolex-daydate-1.jpg">
-      <img src="rolex-daydate-2.jpg">
-      <img src="rolex-daydate-3.jpg">
-      <img src="rolex-daydate-4.jpg">
-    </div>
-  </div>
+  <div class="slider"><div class="slides">
+    <img src="rolex-daydate-1.jpg"><img src="rolex-daydate-2.jpg">
+    <img src="rolex-daydate-3.jpg"><img src="rolex-daydate-4.jpg">
+  </div></div>
   <h2>Rolex Daydate Shift Movement</h2>
   <div class="price">₹1699</div>
-  <div class="buy">
-    <a href="order.html?brand=Rolex&model=Daydate Shift&price=1699">Buy Now</a>
-  </div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Daydate Shift Movement&price=1699">Buy Now</a></div>
 </div>
 
-<!-- ROLEX SUBMARINER -->
+<!-- 3 -->
 <div class="card">
-  <div class="slider">
-    <div class="slides">
-      <img src="rolex-submariner-1.jpg">
-      <img src="rolex-submariner-2.jpg">
-      <img src="rolex-submariner-3.jpg">
-      <img src="rolex-submariner-4.jpg">
-    </div>
-  </div>
+  <div class="slider"><div class="slides">
+    <img src="rolex-submariner-1.jpg"><img src="rolex-submariner-2.jpg">
+    <img src="rolex-submariner-3.jpg"><img src="rolex-submariner-4.jpg">
+  </div></div>
   <h2>Rolex Submariner Shift Movement</h2>
   <div class="price">₹1599</div>
-  <div class="buy">
-    <a href="order.html?brand=Rolex&model=Submariner Shift&price=1599">Buy Now</a>
-  </div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Submariner Shift Movement&price=1599">Buy Now</a></div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-daytona-1.jpg"><img src="rolex-daytona-2.jpg">
+    <img src="rolex-daytona-3.jpg"><img src="rolex-daytona-4.jpg">
+  </div></div>
+  <h2>Rolex Daytona</h2>
+  <div class="price">₹2199</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Daytona&price=2199">Buy Now</a></div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-sunmoon-1.jpg"><img src="rolex-sunmoon-2.jpg">
+    <img src="rolex-sunmoon-3.jpg"><img src="rolex-sunmoon-4.jpg">
+  </div></div>
+  <h2>Rolex Sun Moon Edition</h2>
+  <div class="price">₹1699</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Sun Moon Edition&price=1699">Buy Now</a></div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-datejust-1.jpg"><img src="rolex-datejust-2.jpg">
+    <img src="rolex-datejust-3.jpg"><img src="rolex-datejust-4.jpg">
+  </div></div>
+  <h2>Rolex Datejust Automatic</h2>
+  <div class="price">₹3499</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Datejust Automatic&price=3499">Buy Now</a></div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-explorer2-1.jpg"><img src="rolex-explorer2-2.jpg">
+    <img src="rolex-explorer2-3.jpg"><img src="rolex-explorer2-4.jpg">
+  </div></div>
+  <h2>Rolex Explorer II</h2>
+  <div class="price">₹3999</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Explorer II&price=3999">Buy Now</a></div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-king-1.jpg"><img src="rolex-king-2.jpg">
+    <img src="rolex-king-3.jpg"><img src="rolex-king-4.jpg">
+  </div></div>
+  <h2>Rolex King Automatic</h2>
+  <div class="price">₹1899</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=King Automatic&price=1899">Buy Now</a></div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-gmt-1.jpg"><img src="rolex-gmt-2.jpg">
+    <img src="rolex-gmt-3.jpg"><img src="rolex-gmt-4.jpg">
+  </div></div>
+  <h2>Rolex GMT Shift Movement</h2>
+  <div class="price">₹1699</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=GMT Shift Movement&price=1699">Buy Now</a></div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="slider"><div class="slides">
+    <img src="rolex-skydweller-1.jpg"><img src="rolex-skydweller-2.jpg">
+    <img src="rolex-skydweller-3.jpg"><img src="rolex-skydweller-4.jpg">
+  </div></div>
+  <h2>Rolex Sky Dweller Shift Movement</h2>
+  <div class="price">₹1499</div>
+  <div class="buy"><a href="order.html?brand=Rolex&model=Sky Dweller Shift Movement&price=1499">Buy Now</a></div>
 </div>
 
 </div>
