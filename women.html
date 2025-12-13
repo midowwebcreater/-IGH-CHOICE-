@@ -1,118 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Women Watches – HIGH CHOICE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.png">
+<meta charset="UTF-8">
+<title>Women Watches – High Choice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
-      --card:#f8fafc;
-      --border:#e5e7eb;
-      --accent:#2563eb;
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial;
-      background:var(--bg);
-      color:var(--text);
-    }
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
+<style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --radius:16px;
+}
 
-    /* HEADER */
-    header{
-      position:sticky; top:0; z-index:1000;
-      background:#fff; border-bottom:1px solid var(--border);
-    }
-    .header-inner{
-      max-width:1200px; margin:auto; padding:14px 16px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:1px}
-    .brand img{width:42px;height:42px;border-radius:10px;object-fit:cover}
-    .menu-btn{font-size:22px;background:none;border:none}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    /* MOBILE MENU */
-    .mobile-menu{
-      position:fixed; top:0; right:-100%;
-      width:75%; height:100%; background:#fff;
-      transition:.3s; z-index:2000; padding:24px;
-    }
-    .mobile-menu a{
-      display:block; padding:14px 0; font-weight:600;
-      border-bottom:1px solid var(--border);
-    }
-    .mobile-menu.active{right:0}
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+.header{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+.logo img{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+}
+.menu-btn{
+  font-size:22px;
+  background:none;
+  border:none;
+}
 
-    /* CONTAINER */
-    .container{max-width:1200px;margin:auto;padding:16px}
+/* MOBILE MENU */
+.menu{
+  position:fixed;
+  top:0; right:-100%;
+  width:75%;
+  height:100%;
+  background:#fff;
+  padding:24px;
+  transition:.3s;
+  z-index:2000;
+}
+.menu a{
+  display:block;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  font-weight:600;
+}
+.menu.show{right:0}
 
-    /* PAGE HEAD */
-    .page-head{margin:10px 0 18px}
-    .page-head h1{margin:0;font-size:28px}
-    .page-head p{margin:6px 0 0;color:var(--muted)}
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:16px;
+}
 
-    /* BRAND GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-    }
-    .brand-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:14px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      cursor:pointer;
-      transition:.2s;
-    }
-    .brand-card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 28px rgba(12,20,30,.06);
-    }
-    .brand-card img{
-      width:80px; height:64px;
-      border-radius:12px; object-fit:cover;
-      background:#fff;
-    }
-    .brand-card h3{margin:0}
-    .brand-card p{margin:4px 0 0;color:var(--muted);font-size:13px}
+/* PAGE TITLE */
+.page-title h1{
+  margin:6px 0;
+  font-size:28px;
+}
+.page-title p{
+  margin:0;
+  color:var(--muted);
+}
 
-    @media(min-width:900px){
-      .grid{grid-template-columns:repeat(4,1fr)}
-      .page-head h1{font-size:32px}
-    }
+/* BRAND LIST – MOBILE FIRST */
+.brand-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:20px;
+}
+.brand-card{
+  display:flex;
+  gap:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px;
+  align-items:center;
+  cursor:pointer;
+}
+.brand-card img{
+  width:90px;
+  height:70px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#fff;
+}
+.brand-card h3{margin:0}
+.brand-card p{
+  margin-top:4px;
+  font-size:13px;
+  color:var(--muted);
+}
 
-    footer{
-      margin-top:40px; border-top:1px solid var(--border);
-      padding:24px 16px; color:var(--muted); font-size:14px;
-    }
-  </style>
+/* DESKTOP */
+@media(min-width:900px){
+  .brand-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+  }
+  .brand-card{
+    flex-direction:column;
+    text-align:center;
+  }
+  .brand-card img{
+    width:100%;
+    height:140px;
+  }
+}
+
+/* FOOTER */
+footer{
+  margin-top:40px;
+  border-top:1px solid var(--border);
+  padding:24px 16px;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="brand">
-      <img src="logo.png" alt="High Choice">
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png">
       HIGH CHOICE
     </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
   </div>
 </header>
 
-<div class="mobile-menu" id="menu">
+<div class="menu" id="menu">
   <a href="index.html">Home</a>
   <a href="mens.html">Mens</a>
   <a href="women.html">Womes</a>
@@ -123,16 +175,15 @@
 
 <div class="container">
 
-  <div class="page-head">
+  <div class="page-title">
     <h1>Women Watches</h1>
-    <p>Elegant, premium collections curated for women</p>
+    <p>Elegant & premium collections for women</p>
   </div>
 
-  <!-- BRAND GRID -->
-  <section class="grid">
+  <div class="brand-list">
 
     <div class="brand-card" onclick="location.href='michaelkors.html'">
-      <img src="brands/michaelkors.jpg" alt="Michael Kors">
+      <img src="michaelkors.jpg">
       <div>
         <h3>Michael Kors</h3>
         <p>Modern luxury fashion</p>
@@ -140,31 +191,31 @@
     </div>
 
     <div class="brand-card" onclick="location.href='justcavalli.html'">
-      <img src="brands/justcavalli.jpg" alt="Just Cavalli">
+      <img src="justcavalli.jpg">
       <div>
         <h3>Just Cavalli</h3>
-        <p>Bold & stylish designs</p>
+        <p>Bold designer style</p>
       </div>
     </div>
 
     <div class="brand-card" onclick="location.href='dior.html'">
-      <img src="brands/dior.jpg" alt="Dior">
+      <img src="dior.jpg">
       <div>
         <h3>Dior</h3>
-        <p>Iconic elegance</p>
+        <p>Luxury elegance</p>
       </div>
     </div>
 
     <div class="brand-card" onclick="location.href='cartier_baignoire.html'">
-      <img src="brands/cartier_baignoire.jpg" alt="Cartier Baignoire">
+      <img src="cartier_baignoire.jpg">
       <div>
         <h3>Cartier Baignoire</h3>
-        <p>Timeless French luxury</p>
+        <p>Timeless design</p>
       </div>
     </div>
 
     <div class="brand-card" onclick="location.href='armani_women.html'">
-      <img src="brands/armani_women.jpg" alt="Armani Women">
+      <img src="armani_women.jpg">
       <div>
         <h3>Armani</h3>
         <p>Italian sophistication</p>
@@ -172,7 +223,7 @@
     </div>
 
     <div class="brand-card" onclick="location.href='audemars_women.html'">
-      <img src="brands/audemars_women.jpg" alt="Audemars Piguet Women">
+      <img src="audemars_women.jpg">
       <div>
         <h3>Audemars Piguet</h3>
         <p>Luxury craftsmanship</p>
@@ -180,15 +231,15 @@
     </div>
 
     <div class="brand-card" onclick="location.href='fossil.html'">
-      <img src="brands/fossil.jpg" alt="Fossil Jacqueline">
+      <img src="fossil.jpg">
       <div>
         <h3>Fossil Jacqueline</h3>
-        <p>Classic everyday elegance</p>
+        <p>Classic everyday wear</p>
       </div>
     </div>
 
     <div class="brand-card" onclick="location.href='omega_women.html'">
-      <img src="brands/omega_women.jpg" alt="Omega Women">
+      <img src="omega_women.jpg">
       <div>
         <h3>Omega</h3>
         <p>Precision & beauty</p>
@@ -196,24 +247,24 @@
     </div>
 
     <div class="brand-card" onclick="location.href='ck.html'">
-      <img src="brands/calvinklein.jpg" alt="Calvin Klein">
+      <img src="ck.jpg">
       <div>
         <h3>Calvin Klein</h3>
-        <p>Minimalist luxury</p>
+        <p>Minimal luxury</p>
       </div>
     </div>
 
-  </section>
+  </div>
 
 </div>
 
 <footer>
-  © 2025 HIGH CHOICE · Premium Luxury Watches
+© 2025 HIGH CHOICE · Premium Luxury Watches
 </footer>
 
 <script>
 function toggleMenu(){
-  document.getElementById('menu').classList.toggle('active');
+  document.getElementById('menu').classList.toggle('show');
 }
 </script>
 
