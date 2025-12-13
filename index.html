@@ -1,258 +1,313 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HIGH CHOICE — Premium Watches</title>
-  <meta name="description" content="HIGH CHOICE — Premium Luxury Watches. Men, Women, Kids — curated collections." />
-  <link rel="icon" href="favicon.png" type="image/png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Shared stylesheet (will be provided next) -->
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>HIGH CHOICE – Premium Watches</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png">
 
   <style>
-    /* Small index-specific fallback styles so page won't be totally broken if css missing.
-       Main styling & animations live in css/style.css (provided next). */
-    :root{--accent:#0b1220;--muted:#6b7280;--card:#fff}
-    html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:#fafafa;color:var(--accent)}
-    .wrap{max-width:1200px;margin:0 auto;padding:18px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;position:sticky;top:0;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.95));backdrop-filter: blur(6px);z-index:999}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logoBox{width:56px;height:56px;border-radius:12px;overflow:hidden;background:#111}
-    .logoBox img{width:100%;height:100%;object-fit:cover}
-    nav{display:flex;gap:10px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:700}
-    nav a.active{color:var(--accent)}
-    .hamb{display:none}
-    @media(max-width:980px){nav{display:none}.hamb{display:block}}
-    /* Minimal placeholder visual for featured box */
-    .featured-box{height:280px;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(4,12,32,0.06);display:flex;align-items:center;justify-content:center;color:#fff}
-    .cats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .cat{flex:1 1 160px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(12,20,30,0.03);text-align:center;cursor:pointer}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 12px 28px rgba(12,20,30,0.04)}
-    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
-    footer{padding:28px 0;text-align:center;color:var(--muted);margin-top:40px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-
-    <!-- HEADER -->
-    <header aria-label="Main header">
-      <div class="brand">
-        <div class="logoBox">
-          <img src="logo.png" alt="HIGH CHOICE logo" onerror="this.style.background='#111'">
-        </div>
-        <div>
-          <div style="font-family:'Cinzel',serif;font-size:20px;font-weight:700">HIGH CHOICE</div>
-          <div style="font-size:12px;color:var(--muted)">Premium Luxury Watches</div>
-        </div>
-      </div>
-
-      <nav id="mainNav" aria-label="Main navigation">
-        <a href="index.html" class="navlink active">Home</a>
-        <a href="mens.html" class="navlink">Mens</a>
-        <a href="women.html" class="navlink">Womes</a>
-        <a href="kids.html" class="navlink">Kids</a>
-        <a href="about.html" class="navlink">About</a>
-        <a href="contact.html" class="navlink">Contact</a>
-      </nav>
-
-      <button class="hamb" aria-label="Open menu" onclick="document.getElementById('mobileMenu').style.right='0'">☰</button>
-    </header>
-
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" style="position:fixed;right:-100%;top:0;bottom:0;width:78%;background:#fff;padding:20px;box-shadow:-12px 0 40px rgba(0,0,0,0.12);transition:right .28s;z-index:9999">
-      <div style="display:flex;justify-content:flex-end"><button onclick="document.getElementById('mobileMenu').style.right='-100%'">✕</button></div>
-      <nav style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
-        <a href="index.html">Home</a>
-        <a href="mens.html">Mens</a>
-        <a href="women.html">Womes</a>
-        <a href="kids.html">Kids</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-
-    <!-- HERO -->
-    <section style="margin-top:18px;display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start">
-      <div>
-        <p style="color:var(--muted);font-weight:700;font-size:13px">PREMIUM LUXURY WATCHES</p>
-        <h1 style="font-size:38px;line-height:1.05;margin-top:6px;font-weight:800">High Choice — Curated luxury timepieces</h1>
-        <p style="color:var(--muted);margin-top:10px;max-width:640px">Explore specially selected watches from top brands. Smooth animations, cinematic product experience and quick WhatsApp checkout.</p>
-
-        <div style="margin-top:16px;display:flex;gap:10px">
-          <a class="btn primary" href="mens.html" style="padding:12px 14px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700">Shop Mens</a>
-          <a class="btn" href="women.html" style="padding:12px 14px;border-radius:10px;border:1px solid #eee;font-weight:700">Shop Women</a>
-        </div>
-
-        <!-- category cards -->
-        <div class="cats" style="margin-top:18px">
-          <div class="cat" onclick="location.href='mens.html'">
-            <img src="mens.jpg" alt="Mens" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
-            <h4 style="margin-top:8px">Mens</h4>
-            <div style="color:var(--muted);font-size:13px">Rolex, Omega, Maserati & more</div>
-          </div>
-          <div class="cat" onclick="location.href='women.html'">
-            <img src="women.jpg" alt="Women" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
-            <h4 style="margin-top:8px">Womes</h4>
-            <div style="color:var(--muted);font-size:13px">Designer ladies collections</div>
-          </div>
-          <div class="cat" onclick="location.href='kids.html'">
-            <img src="kids.jpg" alt="Kids" style="width:100%;height:120px;object-fit:cover;border-radius:8px">
-            <h4 style="margin-top:8px">Kids</h4>
-            <div style="color:var(--muted);font-size:13px">Durable & trendy kids watches</div>
-          </div>
-        </div>
-
-        <!-- FEATURED PRODUCTS (populated by js/app.js) -->
-        <section style="margin-top:20px">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <h3 style="margin:0">Featured — Handpicked</h3>
-            <button onclick="openReviewModal()" style="background:transparent;border:2px dashed #e3e7ee;padding:8px;border-radius:10px;font-weight:700">Add Review</button>
-          </div>
-          <div id="featuredGrid" class="grid" style="margin-top:12px">
-            <!-- JS will populate featured product cards here -->
-            <div class="card">Loading featured…</div>
-          </div>
-        </section>
-
-        <!-- REVIEWS -->
-        <section style="margin-top:20px">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <h3 style="margin:0">Customer Reviews</h3>
-            <div style="color:var(--muted);font-size:13px">Verified buyers • Auto-updated</div>
-          </div>
-          <div id="reviewsList" class="reviews" style="margin-top:12px">
-            <!-- JS will populate reviews (fake + user) -->
-            <div class="card">Loading reviews…</div>
-          </div>
-        </section>
-      </div>
-
-      <!-- FEATURED VIDEO / SHOWCASE -->
-      <aside>
-        <div class="featured-box" role="img" aria-label="Featured video">
-          <video id="featuredVideo" style="width:100%;height:100%;object-fit:cover" autoplay muted playsinline loop>
-            <source src="Featured1.mp4" type="video/mp4">
-            <!-- fallback -->
-            <img src="featured-placeholder.jpg" alt="Featured" style="width:100%;height:100%;object-fit:cover">
-          </video>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
-          <div class="card">
-            <h4 style="margin:6px 0">Exclusive Collections</h4>
-            <p style="color:var(--muted);font-size:13px">Curated by experts</p>
-          </div>
-          <div class="card">
-            <h4 style="margin:6px 0">Trusted Experience</h4>
-            <p style="color:var(--muted);font-size:13px">Fast WhatsApp checkout</p>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- QUICK HOW IT WORKS -->
-    <section style="margin-top:26px" class="card">
-      <h3 style="margin:0 0 8px 0">How it works</h3>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <div style="flex:1;min-width:220px">
-          <strong>1. Browse</strong>
-          <div style="color:var(--muted);font-size:13px">Explore Mens/Womes/Kids and open brand pages</div>
-        </div>
-        <div style="flex:1;min-width:220px">
-          <strong>2. Select</strong>
-          <div style="color:var(--muted);font-size:13px">Open model → view images → Buy Now</div>
-        </div>
-        <div style="flex:1;min-width:220px">
-          <strong>3. Checkout</strong>
-          <div style="color:var(--muted);font-size:13px">Fill address & payment → Place Order → WhatsApp</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div style="display:flex;gap:12px;align-items:center">
-          <img src="favicon.png" alt="" style="width:36px;height:36px;border-radius:8px">
-          <div>
-            <div style="font-weight:700">HIGH CHOICE</div>
-            <div style="color:var(--muted);font-size:13px">Premium Luxury Watches</div>
-          </div>
-        </div>
-
-        <div style="color:var(--muted);font-size:14px">© 2025 HIGH CHOICE — All rights reserved</div>
-
-        <div style="display:flex;gap:8px;align-items:center">
-          <div style="color:var(--muted);font-size:13px">Need help?</div>
-          <a href="contact.html" style="padding:8px 10px;border-radius:8px;border:1px solid #eee">Contact</a>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- REVIEW MODAL -->
-  <div id="reviewModal" style="position:fixed;inset:0;background:rgba(2,6,23,0.45);display:none;align-items:center;justify-content:center;z-index:9999">
-    <div style="background:#fff;padding:18px;border-radius:12px;max-width:520px;width:92%">
-      <h3 style="margin:0">Add Your Review</h3>
-      <label style="font-size:13px;color:var(--muted);display:block;margin-top:8px">Name</label>
-      <input id="reviewName" placeholder="Your name" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #eee">
-      <label style="font-size:13px;color:var(--muted);display:block;margin-top:8px">Rating</label>
-      <select id="reviewRating" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #eee">
-        <option value="5">5 ★★★★★</option>
-        <option value="4">4 ★★★★</option>
-        <option value="3">3 ★★★</option>
-        <option value="2">2 ★★</option>
-        <option value="1">1 ★</option>
-      </select>
-      <label style="font-size:13px;color:var(--muted);display:block;margin-top:8px">Review</label>
-      <textarea id="reviewText" placeholder="Write your review" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #eee;height:100px"></textarea>
-
-      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
-        <button onclick="closeReviewModal()" style="padding:10px 12px;border-radius:10px;border:1px solid #ddd">Cancel</button>
-        <button onclick="submitReview()" style="padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;border:none">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Minimal inline script to control modal & placeholders.
-       Full interactive logic (populate featured, reviews, video slider, animations)
-       lives in js/app.js which I will provide next. -->
-  <script>
-    function openReviewModal(){ document.getElementById('reviewModal').style.display='flex'; }
-    function closeReviewModal(){ document.getElementById('reviewModal').style.display='none'; }
-    function submitReview(){
-      const name = document.getElementById('reviewName').value.trim() || 'Anonymous';
-      const rating = document.getElementById('reviewRating').value;
-      const text = document.getElementById('reviewText').value.trim() || 'Great product!';
-      // Temporarily push to local UI (js/app.js will handle persistent logic)
-      const listEl = document.getElementById('reviewsList');
-      const card = document.createElement('div'); card.className='card';
-      card.innerHTML = `<strong>${name}</strong><div style="color:#ffb400">${'★'.repeat(rating)}</div><div style="margin-top:8px;color:var(--muted)">${text}</div>`;
-      listEl.prepend(card);
-      closeReviewModal();
-      // clear
-      document.getElementById('reviewName').value=''; document.getElementById('reviewText').value='';
-      // If js/app.js is present it will save and animate properly.
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --card:#f8fafc;
+      --border:#e5e7eb;
+      --accent:#2563eb;
+      --radius:16px;
     }
 
-    // small safe fallback for featured video autoplay block
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const v = document.getElementById('featuredVideo');
-      if(v){
-        v.play().catch(()=>{ /* autoplay blocked - fine */ });
-      }
-    });
-  </script>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
 
-  <!-- Shared app script (full dynamic logic, products DB, animations) -->
-  <script src="js/app.js"></script>
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:1000;
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1200px;
+      margin:auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+    .brand img{
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      object-fit:cover;
+    }
+    .menu-btn{
+      font-size:22px;
+      background:none;
+      border:none;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu{
+      position:fixed;
+      top:0; right:-100%;
+      width:75%;
+      height:100%;
+      background:#fff;
+      transition:.3s;
+      z-index:2000;
+      padding:24px;
+    }
+    .mobile-menu a{
+      display:block;
+      padding:14px 0;
+      font-weight:600;
+      border-bottom:1px solid var(--border);
+    }
+    .mobile-menu.active{right:0}
+
+    /* CONTAINER */
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:16px;
+    }
+
+    /* HERO */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      margin-top:10px;
+    }
+    .hero h1{
+      font-size:32px;
+      line-height:1.1;
+      margin:0;
+    }
+    .hero p{
+      color:var(--muted);
+      margin:8px 0 16px;
+    }
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:600;
+      border:1px solid var(--border);
+      background:#fff;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+    }
+
+    /* VIDEO */
+    .hero-video{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#000;
+    }
+    .hero-video video{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+    }
+
+    /* CATEGORIES */
+    .categories{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:28px;
+    }
+    .cat{
+      display:flex;
+      gap:14px;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:14px;
+      border:1px solid var(--border);
+      align-items:center;
+    }
+    .cat img{
+      width:90px;
+      height:70px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+    .cat h3{margin:0}
+    .cat p{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    /* HIGHLIGHTS */
+    .highlights{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:28px;
+    }
+    .highlight{
+      background:var(--card);
+      padding:16px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+    }
+
+    /* REVIEWS */
+    .reviews{
+      margin-top:32px;
+    }
+    .review{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:14px;
+      margin-top:12px;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:40px;
+      border-top:1px solid var(--border);
+      padding:24px 16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* DESKTOP */
+    @media(min-width:900px){
+      .hero{flex-direction:row;align-items:center}
+      .hero-text{flex:1}
+      .hero-video{flex:1}
+      .hero-video video{height:360px}
+      .categories{flex-direction:row}
+      .highlights{flex-direction:row}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.png" alt="High Choice">
+      HIGH CHOICE
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="menu">
+  <a href="#">Home</a>
+  <a href="mens.html">Mens</a>
+  <a href="women.html">Womes</a>
+  <a href="kids.html">Kids</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Premium Watches.<br>Curated for You.</h1>
+      <p>Explore luxury watch collections for Men, Women & Kids with a premium shopping experience.</p>
+      <div class="hero-buttons">
+        <a href="mens.html" class="btn primary">Shop Mens</a>
+        <a href="women.html" class="btn">Shop Womes</a>
+      </div>
+    </div>
+
+    <div class="hero-video">
+      <video src="Featured1.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="cat" onclick="location.href='mens.html'">
+      <img src="mens.jpg">
+      <div>
+        <h3>Mens</h3>
+        <p>Rolex, Omega, Armani & more</p>
+      </div>
+    </div>
+
+    <div class="cat" onclick="location.href='women.html'">
+      <img src="women.jpg">
+      <div>
+        <h3>Womes</h3>
+        <p>Elegant & premium women watches</p>
+      </div>
+    </div>
+
+    <div class="cat" onclick="location.href='kids.html'">
+      <img src="kids.jpg">
+      <div>
+        <h3>Kids</h3>
+        <p>Durable & stylish kids collection</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="highlights">
+    <div class="highlight">
+      <strong>Premium Quality</strong>
+      <p>Hand-picked models with showroom finish</p>
+    </div>
+    <div class="highlight">
+      <strong>Trusted Orders</strong>
+      <p>Fast WhatsApp order processing</p>
+    </div>
+    <div class="highlight">
+      <strong>Luxury Experience</strong>
+      <p>Smooth animations & clean UI</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ – Amazing quality & fast response!</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ – Premium look, worth the price.</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ – Highly recommended.</div>
+  </section>
+
+</div>
+
+<footer>
+  © 2025 HIGH CHOICE · Premium Luxury Watches
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+</script>
+
 </body>
-  </html>
+</html>
