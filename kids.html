@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kids Watches – High Choice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
+
+<style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+.header{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+}
+.logo img{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  object-fit:cover;
+}
+.menu-btn{
+  font-size:22px;
+  background:none;
+  border:none;
+}
+
+/* MOBILE MENU */
+.menu{
+  position:fixed;
+  top:0; right:-100%;
+  width:75%;
+  height:100%;
+  background:#fff;
+  padding:24px;
+  transition:.3s;
+  z-index:2000;
+}
+.menu a{
+  display:block;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  font-weight:600;
+}
+.menu.show{right:0}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:16px;
+}
+
+/* PAGE TITLE */
+.page-title h1{
+  margin:6px 0;
+  font-size:28px;
+}
+.page-title p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* BRAND LIST – MOBILE FIRST */
+.brand-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:20px;
+}
+.brand-card{
+  display:flex;
+  gap:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px;
+  align-items:center;
+  cursor:pointer;
+}
+.brand-card img{
+  width:90px;
+  height:70px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#fff;
+}
+.brand-card h3{margin:0}
+.brand-card p{
+  margin-top:4px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* DESKTOP ENHANCEMENT */
+@media(min-width:900px){
+  .brand-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+  .brand-card{
+    flex-direction:column;
+    text-align:center;
+  }
+  .brand-card img{
+    width:100%;
+    height:160px;
+  }
+}
+
+/* FOOTER */
+footer{
+  margin-top:40px;
+  border-top:1px solid var(--border);
+  padding:24px 16px;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png">
+      HIGH CHOICE
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="mens.html">Mens</a>
+  <a href="women.html">Womes</a>
+  <a href="kids.html">Kids</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="container">
+
+  <div class="page-title">
+    <h1>Kids Watches</h1>
+    <p>Safe, durable & stylish watches for kids</p>
+  </div>
+
+  <div class="brand-list">
+
+    <div class="brand-card" onclick="location.href='casio_kids.html'">
+      <img src="casio_kids.jpg">
+      <div>
+        <h3>Casio Kids</h3>
+        <p>Reliable everyday watches</p>
+      </div>
+    </div>
+
+    <div class="brand-card" onclick="location.href='gshock_kids.html'">
+      <img src="gshock_kids.jpg">
+      <div>
+        <h3>G-Shock Kids</h3>
+        <p>Shock-resistant & tough</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+© 2025 HIGH CHOICE · Premium Luxury Watches
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
