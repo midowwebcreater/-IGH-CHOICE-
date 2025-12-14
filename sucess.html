@@ -2,106 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Order Successful – High Choice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Successful | High Choice</title>
 <link rel="icon" href="favicon.png">
 
 <style>
-:root{
-  --bg:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --border:#e5e7eb;
-  --accent:#16a34a;
-  --radius:16px;
-}
-
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
 body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
+  background:#f4f5f7;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:100vh;
+  min-height:100vh
 }
-
-/* CARD */
 .card{
-  width:100%;
-  max-width:420px;
-  padding:24px;
-  border-radius:var(--radius);
-  border:1px solid var(--border);
   background:#fff;
+  width:92%;
+  max-width:420px;
+  padding:28px;
+  border-radius:22px;
   text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.12)
 }
-
-/* ICON */
-.check{
+.logo{
+  height:60px;
+  margin-bottom:12px
+}
+.tick{
   width:80px;
   height:80px;
+  background:#16a34a;
   border-radius:50%;
-  background:#dcfce7;
-  color:#16a34a;
+  margin:14px auto;
   display:flex;
   align-items:center;
   justify-content:center;
+  color:#fff;
   font-size:42px;
-  margin:0 auto 16px;
+  font-weight:900
 }
-
-/* TITLE */
 h1{
-  margin:0;
-  font-size:26px;
+  font-size:22px;
+  margin:14px 0
 }
 p{
-  color:var(--muted);
-  font-size:14px;
-  margin-top:6px;
+  font-size:15px;
+  color:#555;
+  line-height:1.5
 }
-
-/* BUTTONS */
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:20px;
-}
-.actions a{
+a{
+  display:block;
+  margin-top:18px;
   padding:14px;
   border-radius:14px;
-  font-weight:700;
-  text-decoration:none;
-  border:1px solid var(--border);
-}
-.actions a.primary{
-  background:var(--accent);
+  background:#2563eb;
   color:#fff;
-  border:none;
-}
-.actions a.secondary{
-  background:#fff;
-  color:var(--text);
-}
-
-/* BRAND */
-.brand{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-top:24px;
-  font-weight:800;
-  color:var(--muted);
-}
-.brand img{
-  width:36px;
-  height:36px;
-  border-radius:10px;
+  text-decoration:none;
+  font-weight:800
 }
 </style>
 </head>
@@ -109,24 +66,18 @@ p{
 <body>
 
 <div class="card">
+  <img src="logo.png" class="logo">
 
-  <div class="check">✓</div>
+  <div class="tick">✓</div>
 
-  <h1>Order Placed Successfully</h1>
-  <p>Your order has been sent on WhatsApp.<br>
-     Our team will contact you shortly.</p>
+  <h1>Order Successful</h1>
+  <p>
+    Thank you for shopping with <b>High Choice</b>.<br>
+    Your order has been received.<br>
+    Our team will contact you shortly on WhatsApp.
+  </p>
 
-  <div class="actions">
-    <a href="mens.html" class="primary">Explore Mens Watches</a>
-    <a href="women.html" class="secondary">Explore Women Watches</a>
-    <a href="index.html" class="secondary">Back to Home</a>
-  </div>
-
-  <div class="brand">
-    <img src="logo.png">
-    HIGH CHOICE
-  </div>
-
+  <a href="index.html">Continue Shopping</a>
 </div>
 
 </body>
