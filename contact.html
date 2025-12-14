@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | High Choice</title>
+<link rel="icon" href="favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto}
+body{background:linear-gradient(180deg,#f8fafc,#eef2f7);color:#111}
+header{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08)
+}
+header img{height:40px;border-radius:10px}
+header h1{font-size:18px;font-weight:900}
+.container{max-width:520px;margin:auto;padding:18px}
+.card{
+  background:#fff;border-radius:22px;padding:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.15)
+}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+input,textarea{
+  width:100%;padding:14px;border-radius:14px;
+  border:1px solid #d1d5db;font-size:14px;margin-bottom:14px
+}
+input:focus,textarea:focus{border-color:#2563eb;outline:none}
+textarea{resize:none}
+.actions{
+  display:flex;gap:12px;flex-wrap:wrap
+}
+.actions button,.actions a{
+  flex:1;min-width:220px;
+  padding:14px;border-radius:14px;border:none;
+  background:#2563eb;color:#fff;
+  font-weight:900;text-decoration:none;text-align:center
+}
+.note{font-size:12px;color:#555;text-align:center;margin-top:12px}
+</style>
+</head>
+
+<body>
+<header>
+  <img src="logo.png" alt="High Choice">
+  <h1>Contact Us</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+
+    <label>Full Name</label>
+    <input id="name" placeholder="Your name">
+
+    <label>Mobile Number</label>
+    <input id="phone" placeholder="Your mobile number">
+
+    <label>Message</label>
+    <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+
+    <div class="actions">
+      <button onclick="sendWhatsApp()">Send via WhatsApp</button>
+      <a href="index.html">Back to Home</a>
+    </div>
+
+    <div class="note">Support hours: 10 AM – 8 PM • Quick response on WhatsApp</div>
+
+  </div>
+</div>
+
+<script>
+function sendWhatsApp(){
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const message=document.getElementById('message').value;
+  if(!name||!phone||!message){alert('Please fill all details');return;}
+  const text=
+`📩 *CONTACT REQUEST – HIGH CHOICE*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+
+💬 Message:
+${message}`;
+  const url="https://wa.me/917869288078?text="+encodeURIComponent(text);
+  window.open(url,"_blank");
+}
+</script>
+</body>
+</html>
