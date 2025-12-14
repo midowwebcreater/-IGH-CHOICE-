@@ -3,107 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Place Order | High Choice</title>
+<title>Secure Checkout | High Choice</title>
 <link rel="icon" href="favicon.png">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#f4f5f7}
-.container{
-  max-width:520px;
-  margin:auto;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto
+}
+body{
+  background:linear-gradient(180deg,#f8fafc,#eef2f7);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding:16px
 }
-.card{
+.checkout{
   background:#fff;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1)
+  width:100%;
+  max-width:460px;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.15)
 }
-h1{
-  font-size:20px;
-  margin-bottom:14px
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px
+}
+.brand img{
+  height:44px;
+  border-radius:10px
+}
+.brand h1{
+  font-size:18px;
+  font-weight:900
+}
+.section{
+  margin-bottom:16px
 }
 label{
-  font-size:14px;
-  font-weight:600;
+  font-size:13px;
+  font-weight:700;
+  color:#333;
   display:block;
-  margin-top:12px
+  margin-bottom:6px
 }
 input, textarea{
   width:100%;
-  padding:12px;
-  margin-top:6px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:14px
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #d1d5db;
+  font-size:14px;
+  outline:none
 }
-.radio{
+input:focus, textarea:focus{
+  border-color:#2563eb
+}
+textarea{resize:none}
+.summary{
+  background:#f1f5f9;
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:14px
+}
+.summary p{
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:6px
+}
+.summary span{
+  font-weight:900
+}
+.payment{
+  display:flex;
+  gap:10px;
   margin-top:10px
 }
-.radio label{
-  font-weight:500
+.paybox{
+  flex:1;
+  border:1.5px solid #d1d5db;
+  border-radius:14px;
+  padding:12px;
+  font-size:14px;
+  font-weight:700;
+  display:flex;
+  gap:8px;
+  align-items:center
 }
-button{
+.paybox input{accent-color:#2563eb}
+.place{
+  margin-top:18px
+}
+.place button{
   width:100%;
-  margin-top:18px;
   padding:16px;
-  background:#2563eb;
+  border:none;
+  border-radius:16px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
   color:#fff;
   font-size:16px;
-  font-weight:800;
-  border:none;
-  border-radius:14px
+  font-weight:900
 }
-button:active{transform:scale(.97)}
+.place button:active{
+  transform:scale(.97)
+}
+.note{
+  font-size:12px;
+  color:#555;
+  text-align:center;
+  margin-top:12px
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card">
-    <h1>Place Your Order</h1>
+<div class="checkout">
 
-    <label>Name</label>
-    <input id="name" placeholder="Full name">
-
-    <label>Phone</label>
-    <input id="phone" placeholder="Mobile number">
-
-    <label>Address</label>
-    <textarea id="address" rows="3" placeholder="Full delivery address"></textarea>
-
-    <label>Product</label>
-    <input id="product" readonly>
-
-    <label>Price</label>
-    <input id="price" readonly>
-
-    <label>Payment Method</label>
-    <div class="radio">
-      <label><input type="radio" name="payment" value="COD" checked> Cash on Delivery</label><br>
-      <label><input type="radio" name="payment" value="Prepaid"> Prepaid</label>
-    </div>
-
-    <button onclick="placeOrder()">Place Order</button>
+  <div class="brand">
+    <img src="logo.png">
+    <h1>Secure Checkout</h1>
   </div>
+
+  <div class="summary">
+    <p>Product: <span id="product"></span></p>
+    <p>Price: <span id="price"></span></p>
+  </div>
+
+  <div class="section">
+    <label>Full Name</label>
+    <input id="name" placeholder="Enter your full name">
+  </div>
+
+  <div class="section">
+    <label>Mobile Number</label>
+    <input id="phone" placeholder="Enter mobile number">
+  </div>
+
+  <div class="section">
+    <label>Delivery Address</label>
+    <textarea id="address" rows="3" placeholder="House no, area, city, pincode"></textarea>
+  </div>
+
+  <div class="section">
+    <label>Payment Method</label>
+    <div class="payment">
+      <label class="paybox">
+        <input type="radio" name="payment" value="COD" checked> COD
+      </label>
+      <label class="paybox">
+        <input type="radio" name="payment" value="Prepaid"> Prepaid
+      </label>
+    </div>
+  </div>
+
+  <div class="place">
+    <button onclick="placeOrder()">Place Order via WhatsApp</button>
+  </div>
+
+  <div class="note">
+    100% Secure • Trusted Delivery • Premium Support
+  </div>
+
 </div>
 
 <script>
-// Get data from URL
 const params = new URLSearchParams(window.location.search);
-document.getElementById("product").value = params.get("brand")+" - "+params.get("model");
-document.getElementById("price").value = "₹"+params.get("price");
+document.getElementById("product").innerText =
+  params.get("brand") + " - " + params.get("model");
+document.getElementById("price").innerText =
+  "₹" + params.get("price");
 
 function placeOrder(){
-
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
   const address = document.getElementById("address").value;
-  const product = document.getElementById("product").value;
-  const price = document.getElementById("price").value;
   const payment = document.querySelector('input[name="payment"]:checked').value;
+  const product = document.getElementById("product").innerText;
+  const price = document.getElementById("price").innerText;
 
   if(!name || !phone || !address){
     alert("Please fill all details");
@@ -121,14 +203,8 @@ function placeOrder(){
 💰 Price: ${price}
 💳 Payment: ${payment}`;
 
-  const whatsappURL =
-    "https://wa.me/917869288078?text=" + encodeURIComponent(msg);
-
-  window.open(whatsappURL, "_blank");
-
-  setTimeout(()=>{
-    window.location.href="success.html";
-  },1200);
+  const url = "https://wa.me/917869288078?text=" + encodeURIComponent(msg);
+  window.open(url,"_blank");
 }
 </script>
 
